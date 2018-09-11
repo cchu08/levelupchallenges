@@ -1,29 +1,29 @@
 export const ang = (n: number) => {
-    const nToNineTeen = {
-        0: 'zero',
-        1: 'one',
-        2: 'two',
-        3: 'three',
-        4: 'four',
-        5:'five',
-        6: 'six',
-        7: 'seven',
-        8: 'eight',
-        9: 'nine',
-        10: 'ten',
-        11: 'eleven',
-        12: 'twelve',
-        13: 'thirteen',
-        14: 'fourteen',
-        15: 'fifteen',
-        16: 'sixteen',
-        17: 'seventeen',
-        18: 'eighteen',
-        19: 'nineteen',
-        20: 'twenty',
-    };
+    const zeroToNineteen = [
+        'zero',
+        'one',
+        'two',
+        'three',
+        'four',
+        'five',
+        'six',
+        'seven',
+        'eight',
+        'nine',
+        'ten',
+        'eleven',
+        'twelve',
+        'thirteen',
+        'fourteen',
+        'fifteen',
+        'sixteen',
+        'seventeen',
+        'eighteen',
+        'nineteen',
+        'twenty',
+    ];
 
-    const nTens = [
+    const tens = [
         '',
         '',
         'twenty',
@@ -36,12 +36,12 @@ export const ang = (n: number) => {
         'ninety'
     ]
 
-    const ang19 = (n: number) => {
-        return nToNineTeen[n];
+    const ang19 = (n: number): string => {
+        return zeroToNineteen[n];
     }
 
-    const ang99 = (n: number) => {
-        return n%10 ? `${nTens[ n/10 ]} ${ang19(n%10)}` : nTens[ n / 10 ]; 
+    const ang99 = (n: number): string => {
+        return n%10 === 0 ? tens[ n / 10 ] : `${tens[ Math.floor(n/10) ]} ${ang19(n%10)}`;
     }
 
     if (n <= 19) return ang19(n);
