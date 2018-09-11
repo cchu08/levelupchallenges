@@ -52,14 +52,18 @@ export const ang = (n: number) => {
         return `${ang19(Math.floor(n/100))} hundred ${ang99(n%100)}`
     }
 
+    const angBig = (n: number): string => {
+        if (n % 1000 === 0) return `${ang19(n/1000)} thousand`
+
+        return `${ang(Math.floor(n/1000))} thousand ${ang(n%1000)}`;
+    }
+
     if (n <= 19) return ang19(n);
 
     if (n <= 99) return ang99(n);
 
     if (n <= 999) return ang999(n);
 
-
-
-
+    return angBig(n);
 
 };

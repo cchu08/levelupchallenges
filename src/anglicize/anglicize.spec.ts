@@ -37,5 +37,19 @@ describe('Given n=[100, 999]', () => {
         expect(ang(369)).to.equal('three hundred sixty nine');
 
         expect(ang(450)).to.equal('four hundred fifty');
+
+        expect(ang(532)).to.equal('five hundred thirty two');
     });
 });
+
+describe('Given n=[1000, 999999]', () => {
+    it('returns number anglicized', () => {
+        expect(ang(2000)).to.equal('two thousand');
+
+        expect(ang(2001)).to.equal('two thousand one');
+
+        expect(ang(6050)).to.equal('six thousand fifty');
+
+        expect(ang(999999)).to.equal('nine hundred ninety nine thousand nine hundred ninety nine');
+    });
+})
