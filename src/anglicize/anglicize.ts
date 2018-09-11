@@ -44,9 +44,19 @@ export const ang = (n: number) => {
         return n%10 === 0 ? tens[ n / 10 ] : `${tens[ Math.floor(n/10) ]} ${ang19(n%10)}`;
     }
 
+    const ang999 = (n: number): string => {
+
+        if (n % 100 === 0) {
+            return `${ang19(n/100)} hundred`
+        }
+        return `${ang19(Math.floor(n/100))} hundred ${ang99(n%100)}`
+    }
+
     if (n <= 19) return ang19(n);
 
-    if (n <= 100) return ang99(n);
+    if (n <= 99) return ang99(n);
+
+    if (n <= 999) return ang999(n);
 
 
 

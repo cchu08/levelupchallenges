@@ -23,6 +23,19 @@ describe('Given n=[20, 99]', () => {
         expect(ang(69)).to.equal('sixty nine');
 
         expect(ang(99)).to.equal('ninety nine');      
-    })
-})
+    });
+});
 
+describe('Given n=[100, 999]', () => {
+    it('returns number anglicized', () => {
+        expect(ang(100)).to.equal('one hundred');
+
+        expect(ang(500)).to.equal('five hundred');
+
+        expect(ang(150)).to.equal('one hundred fifty');
+
+        expect(ang(369)).to.equal('three hundred sixty nine');
+
+        expect(ang(450)).to.equal('four hundred fifty');
+    });
+});
